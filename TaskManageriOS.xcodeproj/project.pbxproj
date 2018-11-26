@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		7433E3D521AC55D800A42F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3D421AC55D800A42F88 /* AppDelegate.swift */; };
-		7433E3D721AC55D800A42F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3D621AC55D800A42F88 /* ViewController.swift */; };
 		7433E3DA21AC55D800A42F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7433E3D821AC55D800A42F88 /* Main.storyboard */; };
 		7433E3DC21AC55D900A42F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7433E3DB21AC55D900A42F88 /* Assets.xcassets */; };
 		7433E3DF21AC55D900A42F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7433E3DD21AC55D900A42F88 /* LaunchScreen.storyboard */; };
+		7433E3E821AC7E4C00A42F88 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3E721AC7E4C00A42F88 /* TaskListViewController.swift */; };
+		7433E3EA21AC81A300A42F88 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3E921AC81A300A42F88 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7433E3D121AC55D800A42F88 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7433E3D421AC55D800A42F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7433E3D621AC55D800A42F88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7433E3D921AC55D800A42F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7433E3DB21AC55D900A42F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7433E3DE21AC55D900A42F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7433E3E021AC55D900A42F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7433E3E721AC7E4C00A42F88 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		7433E3E921AC81A300A42F88 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		7433E3D321AC55D800A42F88 /* TaskManageriOS */ = {
 			isa = PBXGroup;
 			children = (
+				7433E3E621AC7E2B00A42F88 /* ViewControllers */,
 				7433E3D421AC55D800A42F88 /* AppDelegate.swift */,
-				7433E3D621AC55D800A42F88 /* ViewController.swift */,
 				7433E3D821AC55D800A42F88 /* Main.storyboard */,
 				7433E3DB21AC55D900A42F88 /* Assets.xcassets */,
 				7433E3DD21AC55D900A42F88 /* LaunchScreen.storyboard */,
 				7433E3E021AC55D900A42F88 /* Info.plist */,
 			);
 			path = TaskManageriOS;
+			sourceTree = "<group>";
+		};
+		7433E3E621AC7E2B00A42F88 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7433E3E721AC7E4C00A42F88 /* TaskListViewController.swift */,
+				7433E3E921AC81A300A42F88 /* TaskCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7433E3D721AC55D800A42F88 /* ViewController.swift in Sources */,
+				7433E3EA21AC81A300A42F88 /* TaskCell.swift in Sources */,
 				7433E3D521AC55D800A42F88 /* AppDelegate.swift in Sources */,
+				7433E3E821AC7E4C00A42F88 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
