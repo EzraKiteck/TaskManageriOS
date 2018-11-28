@@ -30,10 +30,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func PopulateTasks() {
-        let newTask = Task(name: "Walk the dog", description: "Take the dog for a walk and don't forget the leash", priority: .medium)
+        let newTask = Task(name: "Walk the dog", description: "Take the dog for a walk and don't forget the leash", priority: .medium, completed: false)
         library.tasks.append(newTask)
-        let otherNewTask = Task(name: "Make a new video game", description: "Start and finish the stressful and exhausting process of completing a video game.", priority: .high)
+        let otherNewTask = Task(name: "Make a new video game", description: "Start and finish the stressful and exhausting process of completing a video game.", priority: .high, completed: false)
         library.tasks.append(otherNewTask)
+        let otherNewTask2 = Task(name: "Be Awesome", description: "DFTBA", priority: .high, completed: true)
+        library.tasks.append(otherNewTask2)
     }
     
     //Passes the count of taskArray as the number of rows

@@ -19,11 +19,13 @@ class Task {
     let name: String
     let description: String
     let priority: Priority
+    let completed: Bool
     
-    init(name: String, description: String, priority: Priority) {
+    init(name: String, description: String, priority: Priority, completed: Bool) {
         self.name = name
         self.description = description
         self.priority = priority
+        self.completed = completed
     }
 
 }

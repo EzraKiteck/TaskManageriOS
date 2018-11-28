@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MWP-dh-vdN">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="MWP-dh-vdN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hv1-hz-0rB">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,16 +32,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="TaskListViewController" customModule="TaskManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt0-Pl-xCu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="336" height="44"/>
                                 <items>
                                     <navigationItem id="o7C-Xy-xGI">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="rYB-w9-Iri">
-                                            <rect key="frame" x="83" y="7" width="248" height="30"/>
+                                            <rect key="frame" x="44" y="7" width="248" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="All"/>
@@ -53,14 +53,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-J6-gz7">
-                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="680"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="90" id="yhC-b9-E5U" customClass="TaskCell" customModule="TaskManageriOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yhC-b9-E5U" id="ZMN-P2-un4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6T-Bf-WkT" userLabel="PriorityView">
@@ -85,22 +85,38 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVx-IF-SeQ" userLabel="taskName">
-                                                    <rect key="frame" x="52" y="11" width="57" height="29"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVx-IF-SeQ" userLabel="taskName">
+                                                    <rect key="frame" x="52" y="11.000000000000002" width="45" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a description for the task and it can be pretty long" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZf-eY-5qZ" userLabel="taskDescription">
+                                                    <rect key="frame" x="52" y="32.666666666666657" width="208" height="46.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eZf-eY-5qZ" secondAttribute="bottom" id="6cR-GT-9pC"/>
                                                 <constraint firstItem="EVx-IF-SeQ" firstAttribute="leading" secondItem="N6T-Bf-WkT" secondAttribute="trailing" constant="10" id="788-L8-PNQ"/>
+                                                <constraint firstItem="eZf-eY-5qZ" firstAttribute="leading" secondItem="N6T-Bf-WkT" secondAttribute="trailing" constant="10" id="BxM-cx-kAM"/>
                                                 <constraint firstItem="N6T-Bf-WkT" firstAttribute="top" secondItem="ZMN-P2-un4" secondAttribute="top" constant="15" id="QlH-W7-anT"/>
                                                 <constraint firstItem="EVx-IF-SeQ" firstAttribute="top" secondItem="ZMN-P2-un4" secondAttribute="topMargin" id="SX7-74-rko"/>
                                                 <constraint firstAttribute="bottom" secondItem="N6T-Bf-WkT" secondAttribute="bottom" constant="15" id="dwA-XA-qLg"/>
                                                 <constraint firstItem="N6T-Bf-WkT" firstAttribute="leading" secondItem="ZMN-P2-un4" secondAttribute="leading" constant="10" id="g8T-Hx-e2E"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eZf-eY-5qZ" secondAttribute="trailing" constant="100" id="gbq-5J-tt4"/>
+                                                <constraint firstItem="eZf-eY-5qZ" firstAttribute="top" secondItem="EVx-IF-SeQ" secondAttribute="bottom" id="sPw-Me-Lfl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="descriptionLabel" destination="eZf-eY-5qZ" id="9zE-BR-KZC"/>
                                             <outlet property="priorityLabel" destination="QwZ-VF-hTh" id="mbP-fR-iOt"/>
                                             <outlet property="priorityView" destination="N6T-Bf-WkT" id="zFv-av-dd8"/>
                                             <outlet property="taskNameLabel" destination="EVx-IF-SeQ" id="ued-oy-OEs"/>
