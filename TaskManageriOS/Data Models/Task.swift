@@ -8,19 +8,23 @@
 
 import UIKit
 
+//Task data model
 class Task {
     
-    enum Priority: String {
-        case high = "High"
-        case medium = "Medium"
-        case low = "Low"
+    enum Priority: Int {
+        case high = 3
+        case medium = 2
+        case low = 1
+        case none = 0
     }
     
+    //Variables
     let name: String
     let description: String
     let priority: Priority
     let completed: Bool
     
+    //Initializer
     init(name: String, description: String, priority: Priority, completed: Bool) {
         self.name = name
         self.description = description

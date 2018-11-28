@@ -43,7 +43,10 @@ class TaskCell: UITableViewCell {
             case .low:
                 priorityView.backgroundColor = UIColor(red:0.28, green:0.79, blue:1.00, alpha:1.0)
                 priorityLabel.text = "!"
+            case .none:
+                print("This message should never appear")
             }
+            
         }
     }
     

@@ -25,16 +25,25 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         self.taskTableView.backgroundView = imageView
         //Fills the task array with preset tasks
         PopulateTasks()
+        //Sort and reload list
+        library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
         taskTableView.reloadData()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Sort and reload list
+        library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
+        taskTableView.reloadData()
+    }
     
+    //Fills array with preset tasks
     func PopulateTasks() {
         let newTask = Task(name: "Walk the dog", description: "Take the dog for a walk and don't forget the leash", priority: .medium, completed: false)
         library.tasks.append(newTask)
         let otherNewTask = Task(name: "Make a new video game", description: "Start and finish the stressful and exhausting process of completing a video game.", priority: .high, completed: false)
         library.tasks.append(otherNewTask)
-        let otherNewTask2 = Task(name: "Be Awesome", description: "DFTBA", priority: .high, completed: true)
+        let otherNewTask2 = Task(name: "Be Awesome", description: "DFTBA", priority: .none, completed: true)
         library.tasks.append(otherNewTask2)
     }
     
@@ -53,5 +62,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    @IBAction func unwindToListDisplay(segue: UIStoryboardSegue) { }
 
 }
