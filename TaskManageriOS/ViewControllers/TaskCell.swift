@@ -14,14 +14,16 @@ class TaskCell: UITableViewCell {
     let priority = "low"
     let completed = false
     
+    var task = Task(name: "Walk the dog", description: "Take the dog for a walk and don't forget the leash", priority: .medium)
+    
     //IB Outlets
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var priorityView: UIView!
     @IBOutlet weak var priorityLabel: UILabel!
     
     //Adds label and sets priority for the task
-    func setup() {
-        taskNameLabel.text = "Hello!"
+    func setup(task: Task) {
+        taskNameLabel.text = task.name
         //Transparent BG
         backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         //Sets priority view

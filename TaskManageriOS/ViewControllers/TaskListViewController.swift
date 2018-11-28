@@ -44,7 +44,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     //Calls the setup function to display the cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
-        cell.setup()
+        let task = library.tasks[indexPath.row]
+        cell.task = task
+        cell.setup(task: task)
         
         return cell
     }
