@@ -54,6 +54,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     //Calls the setup function to display the cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //if library.tasks[indexPath.row].completed == true {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
         let task = library.tasks[indexPath.row]
         cell.task = task
@@ -63,5 +64,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func unwindToListDisplay(segue: UIStoryboardSegue) { }
+    
+    //Handles passing the task to the details screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailsViewController {
+            vc.task = (sender as! TaskCell).task
+        }
+    }
 
 }

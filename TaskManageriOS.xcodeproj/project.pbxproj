@@ -16,6 +16,7 @@
 		7433E3EF21AEF4E300A42F88 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3EE21AEF4E300A42F88 /* Task.swift */; };
 		7433E3F121AEF63B00A42F88 /* TaskLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3F021AEF63B00A42F88 /* TaskLibrary.swift */; };
 		7433E3F321AF135C00A42F88 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3F221AF135C00A42F88 /* AddTaskViewController.swift */; };
+		7433E3F521B0766600A42F88 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433E3F421B0766600A42F88 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7433E3EE21AEF4E300A42F88 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		7433E3F021AEF63B00A42F88 /* TaskLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLibrary.swift; sourceTree = "<group>"; };
 		7433E3F221AF135C00A42F88 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		7433E3F421B0766600A42F88 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				7433E3F221AF135C00A42F88 /* AddTaskViewController.swift */,
 				7433E3E721AC7E4C00A42F88 /* TaskListViewController.swift */,
 				7433E3E921AC81A300A42F88 /* TaskCell.swift */,
+				7433E3F421B0766600A42F88 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				7433E3F321AF135C00A42F88 /* AddTaskViewController.swift in Sources */,
 				7433E3EA21AC81A300A42F88 /* TaskCell.swift in Sources */,
 				7433E3D521AC55D800A42F88 /* AppDelegate.swift in Sources */,
+				7433E3F521B0766600A42F88 /* DetailsViewController.swift in Sources */,
 				7433E3E821AC7E4C00A42F88 /* TaskListViewController.swift in Sources */,
 				7433E3F121AEF63B00A42F88 /* TaskLibrary.swift in Sources */,
 			);
