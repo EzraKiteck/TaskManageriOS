@@ -13,4 +13,6 @@ class TaskLibrary {
     static let sharedInstance = TaskLibrary()
     
     var tasks = [Task]()
+    var completedTasks = [Task]()
+    var incompleteTasks = [Task]()
 }

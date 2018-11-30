@@ -48,6 +48,9 @@
                                                 <segment title="Completed"/>
                                                 <segment title="Incomplete"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="completionSegmentTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="IiY-s8-Skl"/>
+                                            </connections>
                                         </segmentedControl>
                                     </navigationItem>
                                 </items>
@@ -150,6 +153,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="completionStatusSegment" destination="rYB-w9-Iri" id="9yE-eF-drd"/>
                         <outlet property="taskTableView" destination="8qI-J6-gz7" id="4ge-7K-dEh"/>
                     </connections>
                 </viewController>

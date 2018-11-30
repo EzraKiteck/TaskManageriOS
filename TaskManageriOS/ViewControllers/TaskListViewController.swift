@@ -12,6 +12,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     
     //IB Outlets
     @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var completionStatusSegment: UISegmentedControl!
     
     //Gets the shared taskLibrary instance
     let library = TaskLibrary.sharedInstance
@@ -35,6 +36,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         //Sort and reload list
         library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
         taskTableView.reloadData()
+        sortTasks()
     }
     
     //Fills array with preset tasks
@@ -47,16 +49,48 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         library.tasks.append(otherNewTask2)
     }
     
+    func sortTasks() {
+        library.completedTasks.removeAll()
+        library.incompleteTasks.removeAll()
+        for item in library.tasks {
+            if item.completed {
+                library.completedTasks.append(item)
+            } else {
+                library.incompleteTasks.append(item)
+            }
+        }
+    }
+    
     //Passes the count of taskArray as the number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return library.tasks.count
+        switch completionStatusSegment.selectedSegmentIndex {
+        case 0:
+            return library.tasks.count
+        case 1:
+            return library.completedTasks.count
+        case 2:
+            return library.incompleteTasks.count
+        default:
+            print("This message should never appear")
+            return 0
+        }
     }
     
     //Calls the setup function to display the cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if library.tasks[indexPath.row].completed == true {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskCell
-        let task = library.tasks[indexPath.row]
+        var task = library.tasks[indexPath.row]
+        switch completionStatusSegment.selectedSegmentIndex {
+        case 0:
+            task = library.tasks[indexPath.row]
+        case 1:
+            task = library.completedTasks[indexPath.row]
+        case 2:
+            task = library.incompleteTasks[indexPath.row]
+        default:
+            print("This message should never appear")
+            task = library.tasks[indexPath.row]
+        }
         cell.task = task
         cell.setup(task: task)
         
@@ -101,6 +135,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func unwindToListDisplay(segue: UIStoryboardSegue) { }
+    
+    
+    @IBAction func completionSegmentTapped(_ sender: Any) {
+        sortTasks()
+        self.library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
+        taskTableView.reloadData()
+    }
     
     //Handles passing the task to the details screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
