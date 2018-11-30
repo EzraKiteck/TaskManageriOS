@@ -63,6 +63,37 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    //Checks if there is an edit function (this is used to add swipes)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        // We create the delete action, with a closure associated with it.
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _, indexPath in
+            self.library.tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            //Reload the view
+            self.taskTableView.reloadData()
+        }
+        
+        let task = library.tasks[indexPath.row]
+        
+        // If the task is complete, we create and return the 'set as incomplete' action
+        // If the game is incomplete, we create and return the 'set as complete' action
+        if task.completed {
+            let setAsIncomplete = UITableViewRowAction(style: .default, title: "Set as Incomplete") { _, indexPath in
+                task.completed = false
+            }
+            //Create a check out action
+            return [setAsIncomplete, deleteAction]
+            
+        } else {
+            let setAsComplete = UITableViewRowAction(style: .normal, title: "Complete") { _, indexPath in
+                task.completed = true
+            }
+            //Create a check in action
+            return [setAsComplete, deleteAction]
+        }
+    }
+    
     @IBAction func unwindToListDisplay(segue: UIStoryboardSegue) { }
     
     //Handles passing the task to the details screen

@@ -21,6 +21,12 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var prioritySegment: UISegmentedControl!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
     @IBAction func addTaskButtonTapped(_ sender: Any) {
         //Tests if any text fields are empty
         guard

@@ -19,10 +19,10 @@ class Task {
     }
     
     //Variables
-    let name: String
-    let description: String
-    let priority: Priority
-    let completed: Bool
+    var name: String
+    var description: String
+    var priority: Priority
+    var completed: Bool
     
     //Initializer
     init(name: String, description: String, priority: Priority, completed: Bool) {
