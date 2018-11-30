@@ -79,8 +79,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // If the task is complete, we create and return the 'set as incomplete' action
         // If the game is incomplete, we create and return the 'set as complete' action
         if task.completed {
-            let setAsIncomplete = UITableViewRowAction(style: .default, title: "Set as Incomplete") { _, indexPath in
+            let setAsIncomplete = UITableViewRowAction(style: .normal, title: "Set as Incomplete") { _, indexPath in
                 task.completed = false
+                task.priority = .medium
+                self.library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
+                self.taskTableView.reloadData()
             }
             //Create a check out action
             return [setAsIncomplete, deleteAction]
@@ -88,6 +91,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             let setAsComplete = UITableViewRowAction(style: .normal, title: "Complete") { _, indexPath in
                 task.completed = true
+                task.priority = .none
+                self.library.tasks.sort(by: {$0.priority.rawValue > $1.priority.rawValue})
+                self.taskTableView.reloadData()
             }
             //Create a check in action
             return [setAsComplete, deleteAction]

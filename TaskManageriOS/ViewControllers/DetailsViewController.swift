@@ -27,7 +27,6 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(task.name)
         setTaskName = task.name
         titleTextField.text = task.name
         titleTextField.isEnabled = false
